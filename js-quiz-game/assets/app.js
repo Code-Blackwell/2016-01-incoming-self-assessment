@@ -22,13 +22,25 @@ $(document).ready(function(){
 			var letters = ['A.', 'B.', 'C.', 'D.']
 			//Display the possible choices in hypertext
 			//@todo make the game work when you click on a choice.
-			$('.choices').append('<a href="#">' + letters[i] + ' ' + randomQuestion.choices[i] + '</a><br><br>');
+			$('.choices').append('<a href="#" class="usersChoice">' + letters[i] + ' ' + randomQuestion.choices[i] + '</a><br><br>');
 		}
 
 	};
 
+	//create an Event handler that interacts with usersChoice and displays the answer.
+	$('.choices').on('click', '.usersChoice', function(randomQuestion){
+		//clear choices
+		$('.choices').html('');
+		//append the correct answer to the emptied choices tag.
+		$('.usersChoice').append('<h5>' + randomQuestion.correct + '</h5>');
+	})
+
 	//adds a random question and its corresponding answers to our currentForm
 	var QandAgenerator = function(){
+		//event handler
+		//clear current html
+		//call randomQuestion()??
+		//call answerGenerator()
 
 	};
 
