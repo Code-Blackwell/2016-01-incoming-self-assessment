@@ -10,13 +10,21 @@ $(document).ready(function(){
 	//isolate the highscore
 	var $highscore = $('.score');
 	//attaches the counter to the highscore on page
-	$highscore.prepend($currentCount);
+	$currentCount.append('<h4 class= "counter">' + $highscore.val() +'</h4>');
 	//attaches the first question to the form onload
 	$currentForm.prepend('<h3 class = "question"> Question: ' + firstRandomQuestion.question + '</h3>' + '<br><br>');
 
 	// appends all four answers to the corresponding question
 	var answerGenerator = function (randomQuestion){
-		$
+		//create a loop to go through the choices array of the question
+		for(var i = 0 ; i < randomQuestion.choices.length ; i++){
+			//Letters array to make choices more apparent.
+			var letters = ['A.', 'B.', 'C.', 'D.']
+			//Display the possible choices in hypertext
+			//@todo make the game work when you click on a choice.
+			$('.choices').append('<a href="#">' + letters[i] + ' ' + randomQuestion.choices[i] + '</a><br><br>');
+		}
+
 	};
 
 	//adds a random question and its corresponding answers to our currentForm
